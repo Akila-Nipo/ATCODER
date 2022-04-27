@@ -1,0 +1,41 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{   int i,j,k,qr;
+    deque<int>q;
+    priority_queue<int,vector<int>,greater<int>>pq;
+   // priority_queue<int,vector<int>,greater<int>>pq2;
+   cin>>qr;
+   while(qr--)
+   {
+    int a;
+    cin>>a;
+    if(a==1)
+    {   int x;
+        cin>>x;
+         q.push_back(x);
+    }
+    else if(a==2)
+    {
+        if(pq.empty())
+        {
+            cout<<q.front()<<"\n";
+            q.pop_front();
+        }
+        else
+        {
+            cout<<pq.top()<<"\n";
+            pq.pop();
+        }
+    }
+    else if(a==3)
+    {
+        while(q.empty()==0)
+        {
+            pq.push(q.front());
+            q.pop_front();
+        }
+    }
+   }
+}
